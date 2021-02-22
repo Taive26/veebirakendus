@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-lg-6 offset-lg-3 col-sm-10 offset-sm-1">
         <form
-          class="text-center border border-primary p-5"
-          style="margin-top:70px;height:auto;padding-top:100px !important;"
+          class="text-center border border-success p-5"
+          style="margin-top:30px;height:auto;padding-top:100px !important;"
           @submit.prevent="loginUser"
         >
           <input
@@ -23,14 +23,14 @@
             v-model="login.password"
           />
           <p>
-            Dont have an account??<router-link to="/register"
-              >click here</router-link
+            Sul ei ole veel kontot?? <router-link to="/register"
+              >Registreerima!</router-link
             >
           </p>
           <!-- Sign in button -->
           <center>
-            <button class="btn btn-primary btn-block w-75 my-4" type="submit">
-              Sign in
+            <button class="btn btn-success btn-block w-75 my-4" type="submit">
+              Logi sisse
             </button>
           </center>
         </form>
