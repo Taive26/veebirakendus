@@ -16,8 +16,3 @@ module.exports = async (req, res) => {
       res.status(400).json({ err: err });
     }
   };
-
- /* module.exports = async (req, res) => {
-    await res.json(req.userData);
-  };
-*/

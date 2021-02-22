@@ -6,7 +6,10 @@ const routes = [
   {
     path: "/home",
     name: "home",
-    component: Home
+    component: Home,
+    meta: {
+        requiresAuth: true
+      }
   },
   {
     path: "/",
@@ -19,9 +22,24 @@ const routes = [
     component: () => import("../views/register.vue")
   }
 ];
+
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
 });
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+      if (localStorage.getItem("jwt") == null) {
+        next({
+          path: "/"
+        });
+      } else {
+        next();
+      }
+    } else {
+      next();
+    }
+  });
 export default router;

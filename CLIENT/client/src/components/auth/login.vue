@@ -49,7 +49,20 @@ export default {
     };
   },
   methods: {
-    async loginUser() {}
+    async loginUser() {
+        try {
+        let response = await this.$http.post("/user/login", this.login);
+        let token = response.data.token;
+        localStorage.setItem("jwt", token);
+        if (token) {
+          this.$swal("Success", "Login Successful", "success");
+          this.$router.push("/home");
+        }
+      } catch (err) {
+        this.$swal("Error", "Something Went Wrong", "error");
+        console.log(err.response);
+      }
+    }
   }
 };
 </script>
