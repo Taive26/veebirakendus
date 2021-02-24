@@ -61,15 +61,15 @@ export default {
   methods: {
     async registerUser() {
         try {
-        let response = await this.$http.post("/user/register", this.register);
+        let response = await this.$http.post("/api/register", this.register);
         console.log(response);
         let token = response.data.token;
         if (token) {
           localStorage.setItem("jwt", token);
           this.$router.push("/");
-          this.$swal("Success", "Registration Was successful", "success");
+          this.$swal("Tere tulemast meie sekka!", "Logi sisse");
         } else {
-          this.$swal("Error", "Something Went Wrong", "error");
+          this.$swal("Uhh, midagi läks valesti!");
         }
       } catch (err) {
         let error = err.response;

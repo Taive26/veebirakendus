@@ -23,7 +23,7 @@
             v-model="login.password"
           />
           <p>
-            Sul ei ole veel kontot?? <router-link to="/register"
+            Sul ei ole veel kontot? <router-link to="/register"
               >Registreerima!</router-link
             >
           </p>
@@ -51,15 +51,15 @@ export default {
   methods: {
     async loginUser() {
         try {
-        let response = await this.$http.post("/user/login", this.login);
+        let response = await this.$http.post("/api/login", this.login);
         let token = response.data.token;
         localStorage.setItem("jwt", token);
         if (token) {
-          this.$swal("Success", "Login Successful", "success");
+          this.$swal("Tere tulemast peenrale!");
           this.$router.push("/home");
         }
       } catch (err) {
-        this.$swal("Error", "Something Went Wrong", "error");
+        this.$swal("Uhh, midagi läks valesti!", "error");
         console.log(err.response);
       }
     }

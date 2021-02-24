@@ -5,8 +5,8 @@ module.exports = async function (req, res) {
   try {
     let filter = {}
     filter = req.query
-    if (req.query.type === 'true') { //kui tootel on type (TOIT, MÄNGUASJAD või TARVIKUD on required) kirjeldatud, siis leitakse üles
-      filter.type = { $exists: true }
+    if (req.query.productName === 'true') { //kui tootel on type (TOIT, MÄNGUASJAD või TARVIKUD on required) kirjeldatud, siis leitakse üles
+      filter.productName = { $exists: true }
     }
 
     console.log(filter)
