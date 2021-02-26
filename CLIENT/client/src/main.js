@@ -11,7 +11,7 @@ Vue.use(VueSwal);
 
 const base = axios.create({
   baseURL: "http://localhost:3002"
-});
+}); 
 
 Vue.prototype.$http = base;
 Vue.config.productionTip = false;

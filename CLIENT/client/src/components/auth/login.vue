@@ -14,7 +14,7 @@
             placeholder="Email"
             v-model="login.email"
           />
-          <!-- Password -->
+
           <input
             type="password"
             id="password"
@@ -27,7 +27,7 @@
               >Registreerima!</router-link
             >
           </p>
-          <!-- Sign in button -->
+
           <center>
             <button class="btn btn-success btn-block w-75 my-4" type="submit">
               Logi sisse

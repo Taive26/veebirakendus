@@ -66,8 +66,8 @@ export default {
         let token = response.data.token;
         if (token) {
           localStorage.setItem("jwt", token);
-          this.$router.push("/");
-          this.$swal("Tere tulemast meie sekka!", "Logi sisse");
+          this.$router.push("/home");
+          this.$swal("Tere tulemast meie sekka!");
         } else {
           this.$swal("Uhh, midagi läks valesti!");
         }

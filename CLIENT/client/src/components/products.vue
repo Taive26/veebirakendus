@@ -12,12 +12,12 @@
 import axios from "axios";
 
 export default {
-  name: "products",
+  name: "Products",
   data() {
     return {
       fields: [
         { key: "productName", label: "Peenralt pakutakse:"},
-        { key: "descrition", label: "Täpsem kirjeldus:"},
+        { key: "description", label: "Täpsem kirjeldus:"},
         { key: "price", label: "Hind:"},
         { key: "address", label: "Peenra asukoht"},
       ],
@@ -26,7 +26,7 @@ export default {
   },
   async created() {
     const products = await axios({
-      url: `api/products`,
+      url: `/api/products`,
       method: `GET`,
       headers: {},
     });
