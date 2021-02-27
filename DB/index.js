@@ -7,6 +7,7 @@ const router = require('./src/router')
 const morgan = require("morgan");
 const cors = require("cors");
 
+
 app.use(cors());
 app.use(morgan("dev")); 
 app.use(bodyParser.urlencoded({ extended: false }))

@@ -12,7 +12,7 @@ const productsSchema = new Schema({
     type: String, 
     required: false, 
     minlength: 2, 
-    maxlength: 100 },
+    maxlength: 1000 },
   price:{ 
     type: String, 
     required: true, 
@@ -20,7 +20,7 @@ const productsSchema = new Schema({
   address:{ 
       type: String, 
       required: true, 
-      maxlength: 100 },
+      maxlength: 250 },
 })
 
 productsSchema.set('toJSON', { virtuals: true });
